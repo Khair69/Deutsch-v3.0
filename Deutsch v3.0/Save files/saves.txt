@@ -1,0 +1,2 @@
+1	Top25Words	dtoe	words	1	25
+2	DaysOfTheWeek	dtoe	week	1	7
