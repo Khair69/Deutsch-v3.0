@@ -1,0 +1,14 @@
+1	aufzug	elevator
+2	klimaanlage	ac
+3	heizung	heating
+4	fernseher	tv
+5	internetverbindung	internetConnection
+6	licht	light
+7	seife	soap
+8	handtuch	towel
+9	bademantel	bathRobe
+10	föhn	hairdryer
+11	wecker	alarm
+12	telefon	telephone
+13	dusche	shower
+14	wasser	water

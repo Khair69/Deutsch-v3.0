@@ -134,6 +134,10 @@ namespace Deutsch_v3._0
         private void newGameBtn_Click(object sender, EventArgs e)
         {
             tabs.SelectedTab = newGameTab;
+            saveNameTxtbox.Text = "";
+            pathTxtbox.Text = "";
+            fromTxtbox.Text = "";
+            toTxtbox.Text = "";
             this.ActiveControl = saveNameTxtbox;
             saveNameTxtbox.Focus();
         }
@@ -154,6 +158,7 @@ namespace Deutsch_v3._0
                 {
                     h.newSave(saveNameTxtbox.Text, true, pathTxtbox.Text, int.Parse(fromTxtbox.Text), int.Parse(toTxtbox.Text));
                 }
+                selectedId = h.id;
                 startGame(h.id);
             }
         }
