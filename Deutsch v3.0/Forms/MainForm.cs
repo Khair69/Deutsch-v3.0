@@ -290,5 +290,10 @@ namespace Deutsch_v3._0
         {
             startGame(selectedId);
         }
+
+        private void openLibBtn_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", @"..\..\..\words");
+        }
     }
 }

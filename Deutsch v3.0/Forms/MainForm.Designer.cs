@@ -64,6 +64,7 @@
             exitBtn_resualts = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
             retryBtn = new ReaLTaiizor.Controls.MaterialButton();
             statsLbl = new ReaLTaiizor.Controls.MaterialLabel();
+            openLibBtn = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
             tabs.SuspendLayout();
             mainMenuTab.SuspendLayout();
             loadGameTab.SuspendLayout();
@@ -285,6 +286,7 @@
             // 
             // newGameTab
             // 
+            newGameTab.Controls.Add(openLibBtn);
             newGameTab.Controls.Add(exitBtn_newgame);
             newGameTab.Controls.Add(saveBtn);
             newGameTab.Controls.Add(langCmb);
@@ -322,7 +324,7 @@
             saveBtn.HighEmphasis = true;
             saveBtn.Icon = null;
             saveBtn.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            saveBtn.Location = new Point(606, 297);
+            saveBtn.Location = new Point(598, 297);
             saveBtn.Margin = new Padding(4, 6, 4, 6);
             saveBtn.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             saveBtn.Name = "saveBtn";
@@ -780,6 +782,19 @@
             statsLbl.Text = "RESAULTS";
             statsLbl.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // openLibBtn
+            // 
+            openLibBtn.Anchor = AnchorStyles.None;
+            openLibBtn.Depth = 0;
+            openLibBtn.Icon = (Image)resources.GetObject("openLibBtn.Icon");
+            openLibBtn.Location = new Point(602, 219);
+            openLibBtn.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            openLibBtn.Name = "openLibBtn";
+            openLibBtn.Size = new Size(56, 56);
+            openLibBtn.TabIndex = 4;
+            openLibBtn.UseVisualStyleBackColor = true;
+            openLibBtn.Click += openLibBtn_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -842,5 +857,6 @@
         private ReaLTaiizor.Controls.MaterialButton retryBtn;
         private ReaLTaiizor.Controls.MaterialLabel statsLbl;
         private ReaLTaiizor.Controls.MaterialFloatingActionButton exitBtn_resualts;
+        private ReaLTaiizor.Controls.MaterialFloatingActionButton openLibBtn;
     }
 }
