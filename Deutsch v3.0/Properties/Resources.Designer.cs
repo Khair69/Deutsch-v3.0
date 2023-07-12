@@ -83,6 +83,16 @@ namespace Deutsch_v3._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_file_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-file-64", resourceCulture);
@@ -106,6 +116,16 @@ namespace Deutsch_v3._0.Properties {
         internal static System.Drawing.Bitmap icons8_folder_500 {
             get {
                 object obj = ResourceManager.GetObject("icons8-folder-500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_tick_box_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-tick-box-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -77,22 +77,23 @@ namespace Deutsch_v3._0
                 cntBtn.Visible = true;
                 checkBtn.Visible = false;
                 gameProg.Value += 10;
+                corrImg.Visible = true;
             }
             else
             {
                 resLbl.Visible = true;
-                resLbl.Text = "Wrong the right answer is " + h.eWords[probIdx];
+                resLbl.Text = "Correct solution:\n" + h.eWords[probIdx];
                 cntBtn.Visible = true;
                 checkBtn.Visible = false;
                 gameProg.Value += 10;
                 h.nOfIncorect++;
+                wrongImg.Visible = true;
             }
         }
 
         private void cntBtn_Click(object sender, EventArgs e)
         {
             probIdx++;
-            Debug.WriteLine(h.dWords.Count);
             if (probIdx > h.dWords.Count - 1)
             {
                 tabs.SelectedTab = resaultsTab;
@@ -100,10 +101,9 @@ namespace Deutsch_v3._0
             }
             else
             {
-                cntBtn.Visible = false;
+                cntBtn.Visible = resLbl.Visible = wrongImg.Visible = corrImg.Visible = false;
                 checkBtn.Visible = true;
                 dWordLbl.Text = h.dWords[probIdx];
-                resLbl.Visible = false;
                 ansTxtbox.Text = "";
                 ansTxtbox.Focus();
             }

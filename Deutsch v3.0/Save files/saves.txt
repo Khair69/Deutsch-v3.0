@@ -1,3 +1,5 @@
 1	Top25Words	dtoe	words	1	25
 2	DaysOfTheWeek	dtoe	week	1	7
 3	lektion16	dtoe	lektion16	1	14
+4	25to35	dtoe	words	25	35
+5	35to45	dtoe	words	35	45

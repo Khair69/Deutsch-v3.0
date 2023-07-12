@@ -41,6 +41,7 @@
             deleteSaveBtn = new ReaLTaiizor.Controls.MaterialButton();
             gameSavesLB = new ReaLTaiizor.Controls.MaterialListBox();
             newGameTab = new TabPage();
+            openLibBtn = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
             exitBtn_newgame = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
             saveBtn = new ReaLTaiizor.Controls.MaterialButton();
             langCmb = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -49,6 +50,7 @@
             pathTxtbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             saveNameTxtbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             gameTab = new TabPage();
+            corrImg = new PictureBox();
             exitGameBtn = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
             dWordLbl = new ReaLTaiizor.Controls.MaterialLabel();
             resLbl = new ReaLTaiizor.Controls.MaterialLabel();
@@ -56,6 +58,7 @@
             ansTxtbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cntBtn = new ReaLTaiizor.Controls.MaterialButton();
             checkBtn = new ReaLTaiizor.Controls.MaterialButton();
+            wrongImg = new PictureBox();
             settingsTab = new TabPage();
             darkmodeSwitch = new ReaLTaiizor.Controls.MaterialSwitch();
             exitBtn_settings = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
@@ -64,12 +67,13 @@
             exitBtn_resualts = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
             retryBtn = new ReaLTaiizor.Controls.MaterialButton();
             statsLbl = new ReaLTaiizor.Controls.MaterialLabel();
-            openLibBtn = new ReaLTaiizor.Controls.MaterialFloatingActionButton();
             tabs.SuspendLayout();
             mainMenuTab.SuspendLayout();
             loadGameTab.SuspendLayout();
             newGameTab.SuspendLayout();
             gameTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)corrImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)wrongImg).BeginInit();
             settingsTab.SuspendLayout();
             resaultsTab.SuspendLayout();
             SuspendLayout();
@@ -302,6 +306,19 @@
             newGameTab.Text = "New Game";
             newGameTab.UseVisualStyleBackColor = true;
             // 
+            // openLibBtn
+            // 
+            openLibBtn.Anchor = AnchorStyles.None;
+            openLibBtn.Depth = 0;
+            openLibBtn.Icon = (Image)resources.GetObject("openLibBtn.Icon");
+            openLibBtn.Location = new Point(602, 219);
+            openLibBtn.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            openLibBtn.Name = "openLibBtn";
+            openLibBtn.Size = new Size(56, 56);
+            openLibBtn.TabIndex = 4;
+            openLibBtn.UseVisualStyleBackColor = true;
+            openLibBtn.Click += openLibBtn_Click;
+            // 
             // exitBtn_newgame
             // 
             exitBtn_newgame.Depth = 0;
@@ -499,6 +516,7 @@
             // 
             // gameTab
             // 
+            gameTab.Controls.Add(corrImg);
             gameTab.Controls.Add(exitGameBtn);
             gameTab.Controls.Add(dWordLbl);
             gameTab.Controls.Add(resLbl);
@@ -506,6 +524,7 @@
             gameTab.Controls.Add(ansTxtbox);
             gameTab.Controls.Add(cntBtn);
             gameTab.Controls.Add(checkBtn);
+            gameTab.Controls.Add(wrongImg);
             gameTab.Location = new Point(4, 24);
             gameTab.Name = "gameTab";
             gameTab.Padding = new Padding(3);
@@ -514,12 +533,24 @@
             gameTab.Text = "Game";
             gameTab.UseVisualStyleBackColor = true;
             // 
+            // corrImg
+            // 
+            corrImg.Anchor = AnchorStyles.Bottom;
+            corrImg.Image = Properties.Resources.icons8_tick_box_50;
+            corrImg.Location = new Point(134, 305);
+            corrImg.Name = "corrImg";
+            corrImg.Size = new Size(75, 68);
+            corrImg.SizeMode = PictureBoxSizeMode.CenterImage;
+            corrImg.TabIndex = 8;
+            corrImg.TabStop = false;
+            corrImg.Visible = false;
+            // 
             // exitGameBtn
             // 
             exitGameBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             exitGameBtn.Depth = 0;
             exitGameBtn.Icon = Properties.Resources.icons8_x_64;
-            exitGameBtn.Location = new Point(6, 379);
+            exitGameBtn.Location = new Point(20, 364);
             exitGameBtn.Mini = true;
             exitGameBtn.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             exitGameBtn.Name = "exitGameBtn";
@@ -534,10 +565,10 @@
             dWordLbl.Depth = 0;
             dWordLbl.Font = new Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel);
             dWordLbl.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H3;
-            dWordLbl.Location = new Point(259, 124);
+            dWordLbl.Location = new Point(166, 120);
             dWordLbl.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             dWordLbl.Name = "dWordLbl";
-            dWordLbl.Size = new Size(300, 58);
+            dWordLbl.Size = new Size(486, 58);
             dWordLbl.TabIndex = 6;
             dWordLbl.Text = "Deutsch Word";
             dWordLbl.TextAlign = ContentAlignment.MiddleCenter;
@@ -545,14 +576,15 @@
             // resLbl
             // 
             resLbl.Anchor = AnchorStyles.Bottom;
-            resLbl.AutoSize = true;
             resLbl.Depth = 0;
-            resLbl.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            resLbl.Location = new Point(278, 302);
+            resLbl.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            resLbl.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
+            resLbl.Location = new Point(213, 303);
             resLbl.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             resLbl.Name = "resLbl";
-            resLbl.Size = new Size(1, 0);
+            resLbl.Size = new Size(420, 72);
             resLbl.TabIndex = 5;
+            resLbl.TextAlign = ContentAlignment.MiddleLeft;
             resLbl.Visible = false;
             // 
             // gameProg
@@ -578,7 +610,7 @@
             ansTxtbox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             ansTxtbox.HideSelection = true;
             ansTxtbox.LeadingIcon = null;
-            ansTxtbox.Location = new Point(249, 194);
+            ansTxtbox.Location = new Point(249, 190);
             ansTxtbox.MaxLength = 32767;
             ansTxtbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             ansTxtbox.Name = "ansTxtbox";
@@ -646,6 +678,18 @@
             checkBtn.UseAccentColor = false;
             checkBtn.UseVisualStyleBackColor = true;
             checkBtn.Click += checkBtn_Click;
+            // 
+            // wrongImg
+            // 
+            wrongImg.Anchor = AnchorStyles.Bottom;
+            wrongImg.Image = Properties.Resources.icons8_cancel_50;
+            wrongImg.Location = new Point(134, 305);
+            wrongImg.Name = "wrongImg";
+            wrongImg.Size = new Size(75, 68);
+            wrongImg.SizeMode = PictureBoxSizeMode.CenterImage;
+            wrongImg.TabIndex = 8;
+            wrongImg.TabStop = false;
+            wrongImg.Visible = false;
             // 
             // settingsTab
             // 
@@ -782,19 +826,6 @@
             statsLbl.Text = "RESAULTS";
             statsLbl.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // openLibBtn
-            // 
-            openLibBtn.Anchor = AnchorStyles.None;
-            openLibBtn.Depth = 0;
-            openLibBtn.Icon = (Image)resources.GetObject("openLibBtn.Icon");
-            openLibBtn.Location = new Point(602, 219);
-            openLibBtn.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            openLibBtn.Name = "openLibBtn";
-            openLibBtn.Size = new Size(56, 56);
-            openLibBtn.TabIndex = 4;
-            openLibBtn.UseVisualStyleBackColor = true;
-            openLibBtn.Click += openLibBtn_Click;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -813,7 +844,8 @@
             newGameTab.ResumeLayout(false);
             newGameTab.PerformLayout();
             gameTab.ResumeLayout(false);
-            gameTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)corrImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)wrongImg).EndInit();
             settingsTab.ResumeLayout(false);
             settingsTab.PerformLayout();
             resaultsTab.ResumeLayout(false);
@@ -858,5 +890,7 @@
         private ReaLTaiizor.Controls.MaterialLabel statsLbl;
         private ReaLTaiizor.Controls.MaterialFloatingActionButton exitBtn_resualts;
         private ReaLTaiizor.Controls.MaterialFloatingActionButton openLibBtn;
+        private PictureBox wrongImg;
+        private PictureBox corrImg;
     }
 }
